@@ -31,7 +31,23 @@ import java.awt.Graphics;
      frame.add(design, BorderLayout.CENTER);
 
      //buttons for the lower panel and allow for each of them to be "heard"
-     
+     previousDesignButton = new JButton("Previous Degign");
+     previousDesignButton.addActionListener(this);
+
+     generatePocketDesignButton = new JButton("Generate Pocket Design");
+     generatePocketDesignButton.addActionListener(this);
+
+     generateFullDesignButton = new JButton("Generate Full Size Design");
+     generateFullDesignButton.addActionListener(this);
+
+     JPanel buttonPanel = new JPanel(new GridLayout(1,3)); //make grid for buttons to be placed in
+
+     //add each button to the grid
+     buttonPanel.add(previousDesignButton);
+     buttonPanel.add(generatePocketDesignButton);
+     buttonPanel.add(generateFullDesignButton);
+
+     frame.add(buttonPanel, BorderLayout.SOUTH); //place grid on bottom of the frame
 
    }
 
