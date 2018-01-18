@@ -22,7 +22,7 @@ public class DesignGeneratorGUI implements ActionListener {
   public DesignGeneratorGUI() {
     JFrame frame = new JFrame("LOGO NAME GOES HERE"); //change logo name when decided
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    frame.setResizable(false); //maybe want to be resizable ??
+    frame.setResizable(true); //maybe want to be resizable ??
 
     frame.setLayout(new BorderLayout());
 
@@ -31,7 +31,7 @@ public class DesignGeneratorGUI implements ActionListener {
     frame.add(designViewer, BorderLayout.CENTER);
 
     //buttons for the lower panel and allow for each of them to be "heard"
-    previousDesignButton = new JButton("Previous Degign");
+    previousDesignButton = new JButton("Previous Design");
     previousDesignButton.addActionListener(this);
 
     generatePocketDesignButton = new JButton("Generate Pocket Design");
@@ -47,7 +47,7 @@ public class DesignGeneratorGUI implements ActionListener {
     buttonPanel.add(generatePocketDesignButton);
     buttonPanel.add(generateFullDesignButton);
 
-    frame.add(buttonPanel, BorderLayout.SOUTH); //place grid on bottom of the frame
+    frame.add(buttonPanel, BorderLayout.PAGE_END); //place grid on bottom of the frame
 
     frame.pack();
     frame.setVisible(true);
