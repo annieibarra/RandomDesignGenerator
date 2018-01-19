@@ -14,7 +14,9 @@ public class DesignGeneratorGUI implements ActionListener {
   //private DesignViewer designViewer;
   private DesignCanvas canvas;
   private JButton generatePocketDesignButton;
+  private JButton generateHalfDesign;
   private JButton generateFullDesignButton;
+  private JButton generateRandomDesign;
   private JButton previousDesignButton;
   private JButton saveDesignButton;
   private JPanel buttonPanel;
@@ -46,8 +48,14 @@ public class DesignGeneratorGUI implements ActionListener {
     generatePocketDesignButton = new JButton("Generate Pocket Design");
     generatePocketDesignButton.addActionListener(this);
 
-    generateFullDesignButton = new JButton("Generate Full Size Design");
+    generateHalfDesign = new JButton("Generate Half Design");
+    generateHalfDesign.addActionListener(this);
+
+    generateFullDesignButton = new JButton("Generate Full Design");
     generateFullDesignButton.addActionListener(this);
+
+    generateRandomDesign = new JButton("Generate Random Design");
+    generateRandomDesign.addActionListener(this);
 
     //saveDesignButton = new JButton("Save Design");
     //saveDesignButton.addActionListener(this);
@@ -55,9 +63,11 @@ public class DesignGeneratorGUI implements ActionListener {
     buttonPanel = new JPanel(new GridLayout(1,5)); //make grid for buttons to be placed in
 
     //add each button to the grid
-    buttonPanel.add(previousDesignButton);
+    //buttonPanel.add(previousDesignButton);
     buttonPanel.add(generatePocketDesignButton);
+    buttonPanel.add(generateHalfDesign);
     buttonPanel.add(generateFullDesignButton);
+    buttonPanel.add(generateRandomDesign);
     //buttonPanel.add(saveDesignButton);
 
     frame.add(buttonPanel, BorderLayout.SOUTH); //place grid on bottom of the frame
@@ -75,11 +85,23 @@ public class DesignGeneratorGUI implements ActionListener {
   {
     if(evt.getSource() == generatePocketDesignButton) {
       //designViewer.setMode(1);
-      canvas.setMode(1);
+      canvas.setDesignMode(1);
+      canvas.drawDesign();
+    }
+    else if(evt.getSource() == generateHalfDesign) {
+      //designViewer.setMode(3);
+      canvas.setDesignMode(2);
+      canvas.drawDesign();
     }
     else if(evt.getSource() == generateFullDesignButton) {
       //designViewer.setMode(3);
-      canvas.setMode(3);
+      canvas.setDesignMode(3);
+      canvas.drawDesign();
+    }
+    else if(evt.getSource() == generateRandomDesign) {
+      //designViewer.setMode(3);
+      canvas.setDesignMode(4);
+      canvas.drawDesign();
     }
     else if(evt.getSource() == previousDesignButton) {
       //retrieve preiously generated design from database
