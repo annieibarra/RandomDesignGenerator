@@ -75,9 +75,11 @@ public class DesignGeneratorGUI implements ActionListener {
   {
     if(evt.getSource() == generatePocketDesignButton) {
       //designViewer.setMode(1);
+      canvas.setMode(1);
     }
     else if(evt.getSource() == generateFullDesignButton) {
       //designViewer.setMode(3);
+      canvas.setMode(3);
     }
     else if(evt.getSource() == previousDesignButton) {
       //retrieve preiously generated design from database
