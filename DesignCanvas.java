@@ -10,8 +10,8 @@ import java.util.ArrayList;
 */
 public class DesignCanvas extends JPanel
 {
-  public static final int CANVAS_WIDTH = 1000;
-  public static final int CANVAS_HEIGHT = 1000;
+  public static final int CANVAS_WIDTH = 500;
+  public static final int CANVAS_HEIGHT = 500;
   private BufferedImage bufferedImage;
   private Graphics2D bufferBrush;
   private int mode;

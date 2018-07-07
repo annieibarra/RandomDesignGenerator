@@ -27,7 +27,7 @@ public class DesignGeneratorGUI implements ActionListener {
   public DesignGeneratorGUI() {
     JFrame frame = new JFrame("LOGO NAME GOES HERE"); //change logo name when decided
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    frame.setResizable(false); //maybe want to be resizable ??
+    frame.setResizable(true); //maybe want to be resizable ??
 
     frame.setLayout(new BorderLayout());
 
